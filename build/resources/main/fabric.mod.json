@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "topaz",
+  "version": "1.0-SNAPSHOT",
+  "name": "topaz",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/dontlook/topaz"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/topaz/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "dev.daydreamers.topaz.client.TopazClient"
+    ],
+    "main": [
+      "dev.daydreamers.topaz.Topaz"
+    ]
+  },
+  "mixins": [
+    "topaz.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.22",
+    "fabric": "*",
+    "minecraft": "1.19.2"
+  }
+}

@@ -1,0 +1,5 @@
+v1	named	intermediary
+FIELD	dev/daydreamers/topaz/client/mixins/OptionsScreenMixin	Lnet/minecraft/client/gui/screen/Screen;	parent	field_2501
+FIELD	dev/daydreamers/topaz/client/mixins/OptionsScreenMixin	Lnet/minecraft/client/option/GameOptions;	settings	field_2502
+FIELD	dev/daydreamers/topaz/client/mixins/EntityRendererMixin	Lnet/minecraft/client/render/entity/EntityRenderDispatcher;	dispatcher	field_4676
+METHOD	dev/daydreamers/topaz/client/mixins/EntityRendererMixin	()Lnet/minecraft/client/font/TextRenderer;	getTextRenderer	method_3932

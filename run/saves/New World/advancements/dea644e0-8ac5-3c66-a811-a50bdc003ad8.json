@@ -1,0 +1,10 @@
+{
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:taiga": "2023-08-18 23:50:59 +0930",
+      "minecraft:frozen_peaks": "2023-08-18 23:49:46 +0930"
+    },
+    "done": false
+  },
+  "DataVersion": 3120
+}
