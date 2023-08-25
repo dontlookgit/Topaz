@@ -11,6 +11,10 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Vec3d;
 
+/*
+Stolen from Wurst. Difficulty seeing when entity is underwater or bad lighting.
+ */
+
 public class PlayerESP {
 
     public static boolean toggle = true;
