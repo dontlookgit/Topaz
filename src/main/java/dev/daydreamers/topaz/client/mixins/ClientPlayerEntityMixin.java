@@ -10,6 +10,7 @@ import dev.daydreamers.topaz.client.features.player.Retard;
 import dev.daydreamers.topaz.client.features.player.Sneak;
 import dev.daydreamers.topaz.client.features.render.Overlay;
 import dev.daydreamers.topaz.client.features.render.PlayerESP;
+import dev.daydreamers.topaz.client.features.world.Autotool;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -31,6 +32,7 @@ public class ClientPlayerEntityMixin {
         Sprint.onSprint();
         Fly.onFly();
         Sneak.onSneak();
+        Autotool.onAutotool();
     }
 
     @Inject(method = "tick", at = @At("TAIL"))

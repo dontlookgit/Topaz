@@ -7,6 +7,7 @@ import dev.daydreamers.topaz.client.features.movement.Step;
 import dev.daydreamers.topaz.client.features.player.Nofall;
 import dev.daydreamers.topaz.client.features.player.Retard;
 import dev.daydreamers.topaz.client.features.player.Sneak;
+import dev.daydreamers.topaz.client.features.world.Autotool;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.math.MatrixStack;
@@ -54,6 +55,9 @@ public class Overlay {
         featureNames.add(Sneak.name);
         featureStates.add(Sneak.toggle);
         featureColors.add(Sneak.color);
+        featureNames.add(Autotool.name);
+        featureStates.add(Autotool.toggle);
+        featureColors.add(Autotool.color);
 
         int y = 2;
         for (int i = 0; i < featureNames.size(); i++) {

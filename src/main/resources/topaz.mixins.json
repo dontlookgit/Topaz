@@ -7,6 +7,7 @@
   ],
   "client": [
     "ClientPlayerEntityMixin",
+    "ClientPlayerInteractionManagerAccessor",
     "EntityRendererMixin",
     "InGameHudMixin",
     "LivingEntityRendererMixin",

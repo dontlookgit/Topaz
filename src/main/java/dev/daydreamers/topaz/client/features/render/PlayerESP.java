@@ -1,18 +1,25 @@
 package dev.daydreamers.topaz.client.features.render;
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.text.LiteralTextContent;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Matrix4f;
 import net.minecraft.util.math.Vec3d;
+import org.lwjgl.opengl.GL11;
+
+import java.util.List;
 
 /*
-Stolen from Wurst. Difficulty seeing when entity is underwater or bad lighting.
+Stolen from Wurst. Difficulty seeing nametag when entity is underwater or bad lighting.
+Idea: Get the name of player and render a new tag in OpenGL over the old tag. In theory should be less dependent on game code.
  */
 
 public class PlayerESP {

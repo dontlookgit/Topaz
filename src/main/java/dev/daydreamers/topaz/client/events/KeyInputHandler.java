@@ -6,6 +6,7 @@ import dev.daydreamers.topaz.client.features.movement.Step;
 import dev.daydreamers.topaz.client.features.player.Nofall;
 import dev.daydreamers.topaz.client.features.player.Retard;
 import dev.daydreamers.topaz.client.features.player.Sneak;
+import dev.daydreamers.topaz.client.features.world.Autotool;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
@@ -28,6 +29,7 @@ public class KeyInputHandler {
     public static KeyBinding sprintKey;
     public static KeyBinding flyKey;
     public static KeyBinding sneakKey;
+    public static KeyBinding autotoolKey;
 
     public static void registerKeyInput() {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
@@ -52,6 +54,9 @@ public class KeyInputHandler {
                     Sneak.onDisable();
                 }
             }
+            if (autotoolKey.wasPressed()) {
+                Autotool.toggle = !Autotool.toggle;
+            }
         });
     }
 
@@ -62,7 +67,7 @@ public class KeyInputHandler {
         sprintKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(Sprint.name, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_M, KEY_CATEGORY));
         flyKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(Fly.name, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_R, KEY_CATEGORY));
         sneakKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(Sneak.name, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_Z, KEY_CATEGORY));
-
+        autotoolKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(Autotool.name, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, KEY_CATEGORY));
         registerKeyInput();
     }
 

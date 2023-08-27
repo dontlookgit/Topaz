@@ -3,6 +3,9 @@
     "dev/daydreamers/topaz/client/mixins/ClientPlayerEntityMixin": {
       "tick": "Lnet/minecraft/class_746;method_5773()V"
     },
+    "dev/daydreamers/topaz/client/mixins/ClientPlayerInteractionManagerAccessor": {
+      "currentBreakingPos": "field_3714:Lnet/minecraft/class_2338;"
+    },
     "dev/daydreamers/topaz/client/mixins/EntityRendererMixin": {
       "renderLabelIfPresent(Lnet/minecraft/entity/Entity;Lnet/minecraft/text/Text;Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V": "Lnet/minecraft/class_897;method_3926(Lnet/minecraft/class_1297;Lnet/minecraft/class_2561;Lnet/minecraft/class_4587;Lnet/minecraft/class_4597;I)V"
     },
@@ -21,6 +24,9 @@
     "named:intermediary": {
       "dev/daydreamers/topaz/client/mixins/ClientPlayerEntityMixin": {
         "tick": "Lnet/minecraft/class_746;method_5773()V"
+      },
+      "dev/daydreamers/topaz/client/mixins/ClientPlayerInteractionManagerAccessor": {
+        "currentBreakingPos": "field_3714:Lnet/minecraft/class_2338;"
       },
       "dev/daydreamers/topaz/client/mixins/EntityRendererMixin": {
         "renderLabelIfPresent(Lnet/minecraft/entity/Entity;Lnet/minecraft/text/Text;Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V": "Lnet/minecraft/class_897;method_3926(Lnet/minecraft/class_1297;Lnet/minecraft/class_2561;Lnet/minecraft/class_4587;Lnet/minecraft/class_4597;I)V"
