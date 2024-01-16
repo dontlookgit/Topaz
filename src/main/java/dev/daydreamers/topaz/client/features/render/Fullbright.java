@@ -1,11 +1,11 @@
 package dev.daydreamers.topaz.client.features.render;
 
-import net.minecraft.client.MinecraftClient;
+import dev.daydreamers.topaz.client.Wrapper;
 
 public class Fullbright {
 
     public static void onFullbright(){
-
+        
     }
 
 }
