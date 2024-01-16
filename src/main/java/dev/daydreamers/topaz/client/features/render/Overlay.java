@@ -1,7 +1,5 @@
 package dev.daydreamers.topaz.client.features.render;
 
-import com.mojang.blaze3d.systems.RenderSystem;
-import dev.daydreamers.topaz.client.TopazClient;
 import dev.daydreamers.topaz.client.Wrapper;
 import dev.daydreamers.topaz.client.features.movement.Fly;
 import dev.daydreamers.topaz.client.features.movement.Sprint;
@@ -10,21 +8,9 @@ import dev.daydreamers.topaz.client.features.player.Nofall;
 import dev.daydreamers.topaz.client.features.player.Retard;
 import dev.daydreamers.topaz.client.features.player.Sneak;
 import dev.daydreamers.topaz.client.features.world.Autotool;
-import dev.daydreamers.topaz.client.mixins.InGameHudMixin;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.font.TextRenderer;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.gui.hud.DebugHud;
-import net.minecraft.client.gui.hud.InGameHud;
-import net.minecraft.client.render.VertexConsumer;
-import net.minecraft.client.render.VertexConsumerProvider;
-import net.minecraft.client.util.math.MatrixStack;
 
-import java.nio.channels.WritePendingException;
 import java.util.ArrayList;
 import java.util.List;
-
-import static net.fabricmc.fabric.api.client.screen.v1.Screens.getTextRenderer;
 
 public class Overlay {
 

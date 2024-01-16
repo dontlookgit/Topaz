@@ -1,4 +1,10 @@
 {
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:plains": "2023-08-23 06:38:02 +0930"
+    },
+    "done": false
+  },
   "minecraft:recipes/misc/charcoal": {
     "criteria": {
       "has_log": "2023-08-23 06:38:32 +0930"
@@ -17,11 +23,17 @@
     },
     "done": true
   },
-  "minecraft:adventure/adventuring_time": {
+  "minecraft:recipes/decorations/crafting_table": {
     "criteria": {
-      "minecraft:plains": "2023-08-23 06:38:02 +0930"
+      "unlock_right_away": "2024-01-16 16:34:31 +0930"
     },
-    "done": false
+    "done": true
   },
-  "DataVersion": 3120
+  "minecraft:recipes/brewing/cauldron": {
+    "criteria": {
+      "has_water_bucket": "2024-01-16 16:34:31 +0930"
+    },
+    "done": true
+  },
+  "DataVersion": 3700
 }

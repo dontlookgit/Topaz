@@ -1,5 +1,7 @@
 package dev.daydreamers.topaz.client.events;
 
+import dev.daydreamers.topaz.client.features.combat.Killaura;
+import dev.daydreamers.topaz.client.features.movement.Dolphin;
 import dev.daydreamers.topaz.client.features.movement.Fly;
 import dev.daydreamers.topaz.client.features.movement.Sprint;
 import dev.daydreamers.topaz.client.features.movement.Step;
@@ -30,6 +32,8 @@ public class KeyInputHandler {
     public static KeyBinding flyKey;
     public static KeyBinding sneakKey;
     public static KeyBinding autotoolKey;
+    public static KeyBinding dolphinKey;
+    public static KeyBinding killauraKey;
 
     public static void registerKeyInput() {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
@@ -57,6 +61,12 @@ public class KeyInputHandler {
             if (autotoolKey.wasPressed()) {
                 Autotool.toggle = !Autotool.toggle;
             }
+            if (dolphinKey.wasPressed()) {
+                Dolphin.toggle = !Dolphin.toggle;
+            }
+            if (killauraKey.wasPressed()) {
+                Killaura.toggle = !Killaura.toggle;
+            }
         });
     }
 
@@ -68,6 +78,8 @@ public class KeyInputHandler {
         flyKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(Fly.name, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_R, KEY_CATEGORY));
         sneakKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(Sneak.name, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_Z, KEY_CATEGORY));
         autotoolKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(Autotool.name, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, KEY_CATEGORY));
+        dolphinKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(Dolphin.name, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_J, KEY_CATEGORY));
+        killauraKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(Killaura.name, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_K, KEY_CATEGORY));
         registerKeyInput();
     }
 

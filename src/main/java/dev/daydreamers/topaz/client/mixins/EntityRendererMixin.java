@@ -8,8 +8,6 @@ import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.text.Text;
-//import net.minecraft.util.math.Matrix4f;
-import net.minecraft.util.math.MatrixUtil;
 import org.joml.Matrix4f;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -92,7 +90,7 @@ public class EntityRendererMixin {
 
         // draw text
         if(notSneaky)
-            tr.draw(text, labelX, labelY, 0xFFFFFF, false, matrix, vertexConsumers, textLayer, 0, light);
+            tr.draw(text, labelX, labelY, 0xFFFFFF, false, matrix, vertexConsumers, textLayer, 1, light);
         matrices.pop();
     }
 

@@ -2,15 +2,15 @@ package dev.daydreamers.topaz.client.mixins;
 
 import dev.daydreamers.topaz.client.TopazClient;
 import dev.daydreamers.topaz.client.Wrapper;
+import dev.daydreamers.topaz.client.features.combat.Killaura;
+import dev.daydreamers.topaz.client.features.movement.Dolphin;
 import dev.daydreamers.topaz.client.features.movement.Fly;
 import dev.daydreamers.topaz.client.features.movement.Sprint;
 import dev.daydreamers.topaz.client.features.movement.Step;
 import dev.daydreamers.topaz.client.features.player.Nofall;
 import dev.daydreamers.topaz.client.features.player.Retard;
 import dev.daydreamers.topaz.client.features.player.Sneak;
-import dev.daydreamers.topaz.client.features.render.Overlay;
 import dev.daydreamers.topaz.client.features.world.Autotool;
-import net.minecraft.SharedConstants;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.hud.DebugHud;
@@ -25,9 +25,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static net.fabricmc.fabric.api.client.screen.v1.Screens.getClient;
-import static net.fabricmc.fabric.api.client.screen.v1.Screens.getTextRenderer;
 
 @Mixin(InGameHud.class)
 public abstract class InGameHudMixin {
@@ -48,9 +45,9 @@ public abstract class InGameHudMixin {
         if (!Wrapper.getMC().getDebugHud().shouldShowDebugHud()) {
             //Overlay.onOverlayRender();
             //Client name & fps
-            context.drawCenteredTextWithShadow(getTextRenderer(), CLIENT_STRING, CLIENT_STRING.length() + (CLIENT_STRING.length() / 2) * 4 + 2, 2, 0xFFFFFF);
+            context.drawCenteredTextWithShadow(getTextRenderer(), CLIENT_STRING, CLIENT_STRING.length() + (CLIENT_STRING.length() / 2) * 4 + 1, 2, 0xFFFFFF);
             String FPS = "FPS:" + Integer.toString(Wrapper.getMC().getCurrentFps());
-            context.drawCenteredTextWithShadow(getTextRenderer(), FPS, FPS.length() + (FPS.length() / 2) * 4 + 2, 12, 0xFFFFFF);
+            context.drawCenteredTextWithShadow(getTextRenderer(), FPS, FPS.length() + (FPS.length() / 2) * 4 + 1, 12, 0xFFFFFF);
             //Arraylist
             List<String> featureNames = new ArrayList<>();
             List<Boolean> featureStates = new ArrayList<>();
@@ -76,6 +73,12 @@ public abstract class InGameHudMixin {
             featureNames.add(Autotool.name);
             featureStates.add(Autotool.toggle);
             featureColors.add(Autotool.color);
+            featureNames.add(Dolphin.name);
+            featureStates.add(Dolphin.toggle);
+            featureColors.add(Dolphin.color);
+            featureNames.add(Killaura.name);
+            featureStates.add(Killaura.toggle);
+            featureColors.add(Killaura.color);
 
             int y = 2;
             for (int i = 0; i < featureNames.size(); i++) {
