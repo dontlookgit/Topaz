@@ -1,11 +1,11 @@
 package dev.daydreamers.topaz.client.features.player;
 
+import dev.daydreamers.topaz.client.Wrapper;
 import dev.daydreamers.topaz.client.features.movement.Fly;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
@@ -21,18 +21,18 @@ public class Nofall {
     public static boolean toggle = true;
     public static final int color = 0xC90000;
 
-    public static void onNofall(){
-        assert MinecraftClient.getInstance().player != null;
-        if(MinecraftClient.getInstance().player.fallDistance >= 2 && toggle && !Fly.toggle) {
-            PlayerMoveC2SPacket packetLook = new PlayerMoveC2SPacket.LookAndOnGround(MinecraftClient.getInstance().player.getYaw(), MinecraftClient.getInstance().player.getPitch(), true);
-            PlayerMoveC2SPacket packetPos = new PlayerMoveC2SPacket.PositionAndOnGround(MinecraftClient.getInstance().player.getX(), MinecraftClient.getInstance().player.getY(), MinecraftClient.getInstance().player.getZ(), true);
-            Objects.requireNonNull(MinecraftClient.getInstance().getNetworkHandler()).sendPacket(packetLook);
-            Objects.requireNonNull(MinecraftClient.getInstance().getNetworkHandler()).sendPacket(packetPos);
+    public static void onNofall() {
+        assert Wrapper.getMC().player != null;
+        if(Wrapper.getMC().player.fallDistance >= 2 && toggle && !Fly.toggle) {
+            PlayerMoveC2SPacket packetLook = new PlayerMoveC2SPacket.LookAndOnGround(Wrapper.getMC().player.getYaw(), Wrapper.getMC().player.getPitch(), true);
+            PlayerMoveC2SPacket packetPos = new PlayerMoveC2SPacket.PositionAndOnGround(Wrapper.getMC().player.getX(), Wrapper.getMC().player.getY(), Wrapper.getMC().player.getZ(), true);
+            Wrapper.sendPacket(packetLook);
+            Wrapper.sendPacket(packetPos);
         } else if (Fly.toggle) {
-            PlayerMoveC2SPacket packetLookFly = new PlayerMoveC2SPacket.LookAndOnGround(MinecraftClient.getInstance().player.getYaw(), MinecraftClient.getInstance().player.getPitch(), false);
-            PlayerMoveC2SPacket packetPosFly = new PlayerMoveC2SPacket.PositionAndOnGround(MinecraftClient.getInstance().player.getX(), MinecraftClient.getInstance().player.getY(), MinecraftClient.getInstance().player.getZ(), false);
-            Objects.requireNonNull(MinecraftClient.getInstance().getNetworkHandler()).sendPacket(packetLookFly);
-            Objects.requireNonNull(MinecraftClient.getInstance().getNetworkHandler()).sendPacket(packetPosFly);
+            PlayerMoveC2SPacket packetLookFly = new PlayerMoveC2SPacket.LookAndOnGround(Wrapper.getMC().player.getYaw(), Wrapper.getMC().player.getPitch(), false);
+            PlayerMoveC2SPacket packetPosFly = new PlayerMoveC2SPacket.PositionAndOnGround(Wrapper.getMC().player.getX(), Wrapper.getMC().player.getY(), Wrapper.getMC().player.getZ(), false);
+            Wrapper.sendPacket(packetLookFly);
+            Wrapper.sendPacket(packetPosFly);
         }
         //onMLG();
     }

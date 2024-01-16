@@ -1,5 +1,6 @@
 package dev.daydreamers.topaz.client.features.movement;
 
+import dev.daydreamers.topaz.client.Wrapper;
 import net.minecraft.client.MinecraftClient;
 
 public class Sprint {
@@ -10,9 +11,9 @@ public class Sprint {
 
     public static void onSprint() {
         if (toggle) {
-            assert MinecraftClient.getInstance().player != null;
-            if (MinecraftClient.getInstance().options.forwardKey.isPressed()) {
-                MinecraftClient.getInstance().player.setSprinting(true);
+            assert Wrapper.getMC().player != null;
+            if (Wrapper.getMC().options.forwardKey.isPressed()) {
+                Wrapper.getMC().player.setSprinting(true);
             }
         }
     }

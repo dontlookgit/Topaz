@@ -1,5 +1,6 @@
 package dev.daydreamers.topaz.client.features.world;
 
+import dev.daydreamers.topaz.client.Wrapper;
 import dev.daydreamers.topaz.client.mixins.ClientPlayerInteractionManagerAccessor;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
@@ -24,22 +25,22 @@ public class Autotool {
     static int slot = 0;
 
     public static void onAutotool() {
-        ClientPlayerInteractionManager interactionManager = MinecraftClient.getInstance().interactionManager;
+        ClientPlayerInteractionManager interactionManager = Wrapper.getMC().interactionManager;
 
         if (interactionManager == null) {
             return;
         }
         if (prevState && !interactionManager.isBreakingBlock()) {
-            assert MinecraftClient.getInstance().player != null;
-            MinecraftClient.getInstance().player.getInventory().selectedSlot = slot;
+            assert Wrapper.getMC().player != null;
+            Wrapper.getMC().player.getInventory().selectedSlot = slot;
         } else if (prevState != interactionManager.isBreakingBlock()) {
-            assert MinecraftClient.getInstance().player != null;
-            slot = MinecraftClient.getInstance().player.getInventory().selectedSlot;
+            assert Wrapper.getMC().player != null;
+            slot = Wrapper.getMC().player.getInventory().selectedSlot;
         }
         if (interactionManager.isBreakingBlock()) {
             BlockPos blockPos = ((ClientPlayerInteractionManagerAccessor) interactionManager).getCurrentBreakingPos();
-            assert MinecraftClient.getInstance().world != null;
-            BlockState blockState = MinecraftClient.getInstance().world.getBlockState(blockPos);
+            assert Wrapper.getMC().world != null;
+            BlockState blockState = Wrapper.getMC().world.getBlockState(blockPos);
             swap(blockState);
         }
         prevState = interactionManager.isBreakingBlock();
@@ -50,7 +51,7 @@ public class Autotool {
         int index = -1;
         int optAirIndex = -1;
         for (int i = 0; i < 9; i++) {
-            ItemStack stack = Objects.requireNonNull(MinecraftClient.getInstance().player).getInventory().getStack(i);
+            ItemStack stack = Objects.requireNonNull(Wrapper.getMC().player).getInventory().getStack(i);
             if (stack.getItem() == Items.AIR) {
                 optAirIndex = i;
             }
@@ -60,10 +61,10 @@ public class Autotool {
             }
         }
         if (index != -1) {
-            MinecraftClient.getInstance().player.getInventory().selectedSlot = index;
+            Wrapper.getMC().player.getInventory().selectedSlot = index;
         } else {
             if (optAirIndex != -1) {
-                MinecraftClient.getInstance().player.getInventory().selectedSlot = optAirIndex;
+                Wrapper.getMC().player.getInventory().selectedSlot = optAirIndex;
             }
         }
     }

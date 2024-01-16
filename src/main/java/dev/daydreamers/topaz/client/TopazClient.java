@@ -3,7 +3,10 @@ package dev.daydreamers.topaz.client;
 import dev.daydreamers.topaz.client.events.KeyInputHandler;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.Window;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.util.profiling.jfr.sample.NetworkIoStatistics;
 
 public class TopazClient implements ClientModInitializer {
 

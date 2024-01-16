@@ -29,5 +29,11 @@
     },
     "done": false
   },
-  "DataVersion": 3120
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2024-01-16 14:13:00 +0930"
+    },
+    "done": true
+  },
+  "DataVersion": 3700
 }

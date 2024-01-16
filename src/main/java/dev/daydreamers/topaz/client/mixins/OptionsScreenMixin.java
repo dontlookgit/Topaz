@@ -25,8 +25,8 @@ public class OptionsScreenMixin extends Screen {
 
     @Inject(method = "init", at = @At("TAIL"))
     public void onOptionScreenInit(CallbackInfo info) {
-        this.addDrawableChild(new ButtonWidget(this.width / 2 - 155, this.height / 6 + 144 - 6, 150, 20, Text.translatable("topaz.screen"), (button) -> {
-            assert this.client != null;
-        }));
+        //this.addDrawableChild(new ButtonWidget(this.width / 2 - 155, this.height / 6 + 144 - 6, 150, 20, Text.translatable("topaz.screen"), (button) -> {
+            //assert this.client != null;
+        //}));
     }
 }

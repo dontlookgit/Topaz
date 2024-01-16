@@ -27,7 +27,7 @@ public class ClientPlayerEntityMixin {
     public void onPreTick(CallbackInfo info) {
         Step.onStep();
         Nofall.onNofall();
-        PlayerESP.nametag();
+        //PlayerESP.nametag();
         Retard.onRetard();
         Sprint.onSprint();
         Fly.onFly();

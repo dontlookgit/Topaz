@@ -20,8 +20,8 @@ toggleCrouch:false
 toggleSprint:false
 darkMojangStudiosBackground:false
 hideLightningFlashes:false
-mouseSensitivity:0.5
-fov:0.0
+mouseSensitivity:0.352112676056338
+fov:0.5
 screenEffectScale:1.0
 fovEffectScale:1.0
 darknessEffectScale:1.0
@@ -117,6 +117,7 @@ key_Retard:key.keyboard.o
 key_Sprint:key.keyboard.m
 key_Fly:key.keyboard.r
 key_Sneak:key.keyboard.z
+key_Autotool:key.keyboard.unknown
 soundCategory_master:1.0
 soundCategory_music:1.0
 soundCategory_record:1.0

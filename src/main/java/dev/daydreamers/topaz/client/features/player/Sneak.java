@@ -1,5 +1,6 @@
 package dev.daydreamers.topaz.client.features.player;
 
+import dev.daydreamers.topaz.client.Wrapper;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.network.packet.c2s.play.ClientCommandC2SPacket;
 
@@ -11,13 +12,13 @@ public class Sneak {
 
     public static void onSneak() {
         if (toggle) {
-            assert MinecraftClient.getInstance().player != null;
-            MinecraftClient.getInstance().player.networkHandler.sendPacket(new ClientCommandC2SPacket(MinecraftClient.getInstance().player, ClientCommandC2SPacket.Mode.PRESS_SHIFT_KEY));
+            assert Wrapper.getMC().player != null;
+            Wrapper.sendPacket(new ClientCommandC2SPacket(Wrapper.getMC().player, ClientCommandC2SPacket.Mode.PRESS_SHIFT_KEY));
         }
     }
 
     public static void onDisable() {
-        assert MinecraftClient.getInstance().player != null;
-        MinecraftClient.getInstance().player.networkHandler.sendPacket(new ClientCommandC2SPacket(MinecraftClient.getInstance().player, ClientCommandC2SPacket.Mode.RELEASE_SHIFT_KEY));
+        assert Wrapper.getMC().player != null;
+        Wrapper.sendPacket(new ClientCommandC2SPacket(Wrapper.getMC().player, ClientCommandC2SPacket.Mode.RELEASE_SHIFT_KEY));
     }
 }

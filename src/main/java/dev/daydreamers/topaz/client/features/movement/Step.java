@@ -1,6 +1,13 @@
 package dev.daydreamers.topaz.client.features.movement;
 
+import dev.daydreamers.topaz.client.Wrapper;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.text.OrderedText;
+import net.minecraft.text.Style;
+import net.minecraft.text.Text;
+import net.minecraft.text.TextContent;
+
+import java.util.List;
 
 public class Step {
 
@@ -10,11 +17,11 @@ public class Step {
 
     public static void onStep() {
         if (toggle) {
-        assert MinecraftClient.getInstance().player != null;
-        if(MinecraftClient.getInstance().player.verticalCollision) {
-            MinecraftClient.getInstance().player.stepHeight = 1;
+        assert Wrapper.getMC().player != null;
+        if(Wrapper.getMC().player.verticalCollision) {
+            Wrapper.getMC().player.setStepHeight(1);
         } else {
-            MinecraftClient.getInstance().player.stepHeight = 0.5f;
+            Wrapper.getMC().player.setStepHeight(0.5F);
             }
         }
     }

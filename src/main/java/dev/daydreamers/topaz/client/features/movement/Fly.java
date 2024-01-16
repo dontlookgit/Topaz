@@ -1,9 +1,7 @@
 package dev.daydreamers.topaz.client.features.movement;
 
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.entity.Entity;
+import dev.daydreamers.topaz.client.Wrapper;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
-import net.minecraft.util.math.Vec3d;
 
 public class Fly {
 
@@ -17,7 +15,7 @@ public class Fly {
 
     public static void onFly() {
         if (toggle) {
-            assert MinecraftClient.getInstance().player != null;
+            assert Wrapper.getMC().player != null;
             bypassTimer++;
             //Entity flying = MinecraftClient.getInstance().player;
             double x = 0;
@@ -25,32 +23,32 @@ public class Fly {
             double z = 0;
 
 
-            if (MinecraftClient.getInstance().player.input.jumping) {
+            if (Wrapper.getMC().player.input.jumping) {
                 y += speed;
             }
 
-            if (MinecraftClient.getInstance().player.input.sneaking) {
+            if (Wrapper.getMC().player.input.sneaking) {
                 y -= speed;
             }
 
-            if (MinecraftClient.getInstance().player.input.movementForward != 0 || MinecraftClient.getInstance().player.input.movementSideways != 0) {
-                double angle = Math.toRadians(MinecraftClient.getInstance().player.headYaw) - Math.atan2(Math.signum(MinecraftClient.getInstance().player.input.movementSideways), Math.signum(MinecraftClient.getInstance().player.input.movementForward));
+            if (Wrapper.getMC().player.input.movementForward != 0 || Wrapper.getMC().player.input.movementSideways != 0) {
+                double angle = Math.toRadians(Wrapper.getMC().player.headYaw) - Math.atan2(Math.signum(Wrapper.getMC().player.input.movementSideways), Math.signum(Wrapper.getMC().player.input.movementForward));
 
                 x = -Math.sin(angle) * speed;
                 z = Math.cos(angle) * speed;
             }
 
-            MinecraftClient.getInstance().player.setVelocity(x, y, z);
+            Wrapper.getMC().player.setVelocity(x, y, z);
 
             if (bypassTimer > 10) {
                 //Vec3d velocity = MinecraftClient.getInstance().player.getVelocity();
-                MinecraftClient.getInstance().player.networkHandler.sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(MinecraftClient.getInstance().player.getX(), MinecraftClient.getInstance().player.getY() - 0.2, MinecraftClient.getInstance().player.getZ(), false));
-                MinecraftClient.getInstance().player.networkHandler.sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(MinecraftClient.getInstance().player.getX(), MinecraftClient.getInstance().player.getY() + 0.2, MinecraftClient.getInstance().player.getZ(), false));
+                Wrapper.sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(Wrapper.getMC().player.getX(), Wrapper.getMC().player.getY() - 0.2, Wrapper.getMC().player.getZ(), false));
+                Wrapper.sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(Wrapper.getMC().player.getX(), Wrapper.getMC().player.getY() + 0.2, Wrapper.getMC().player.getZ(), false));
                 bypassTimer = 0;
             }
-            if (MinecraftClient.getInstance().player.getY() % 1 == 0) {
-                if (MinecraftClient.getInstance().player.isOnGround()) {
-                    if (MinecraftClient.getInstance().player.getVelocity().y == 0) {
+            if (Wrapper.getMC().player.getY() % 1 == 0) {
+                if (Wrapper.getMC().player.isOnGround()) {
+                    if (Wrapper.getMC().player.getVelocity().y == 0) {
 
                     }
                 }
