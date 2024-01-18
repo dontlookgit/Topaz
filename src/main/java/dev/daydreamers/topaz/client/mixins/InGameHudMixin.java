@@ -1,6 +1,7 @@
 package dev.daydreamers.topaz.client.mixins;
 
 import dev.daydreamers.topaz.client.TopazClient;
+import dev.daydreamers.topaz.client.features.render.Fullbright;
 import dev.daydreamers.topaz.client.features.world.Speedmine;
 import dev.daydreamers.topaz.client.utils.Wrapper;
 import dev.daydreamers.topaz.client.features.combat.Killaura;
@@ -41,8 +42,6 @@ public abstract class InGameHudMixin {
 
     @Inject(at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/systems/RenderSystem;enableBlend()V", remap = false, ordinal = 3), method = "render(Lnet/minecraft/client/gui/DrawContext;F)V")
     private void draw(DrawContext context, float tickDelta, CallbackInfo ci){
-        Window window = Wrapper.getMC().getWindow();
-        window.setTitle(CLIENT_STRING);
         if (!Wrapper.getMC().getDebugHud().shouldShowDebugHud()) {
             //Overlay.onOverlayRender();
             //Client name & fps
@@ -83,6 +82,9 @@ public abstract class InGameHudMixin {
             featureNames.add(Speedmine.name);
             featureStates.add(Speedmine.toggle);
             featureColors.add(Speedmine.color);
+            featureNames.add(Fullbright.name);
+            featureStates.add(Fullbright.toggle);
+            featureColors.add(Fullbright.color);
 
             int y = 2;
             for (int i = 0; i < featureNames.size(); i++) {

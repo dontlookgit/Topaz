@@ -11,7 +11,9 @@
     "ClientPlayerInteractionManagerAccessor",
     "EntityRendererMixin",
     "InGameHudMixin",
+    "LightmapTextureManagerMixin",
     "LivingEntityRendererMixin",
+    "MinecraftClientMixin",
     "OptionsScreenMixin"
   ],
   "injectors": {

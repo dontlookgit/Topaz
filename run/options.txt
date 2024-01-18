@@ -32,7 +32,7 @@ glintStrength:0.75
 damageTiltStrength:1.0
 highContrast:false
 narratorHotkey:true
-gamma:0.5
+gamma:1.0
 renderDistance:2
 simulationDistance:5
 entityDistanceScaling:0.5
@@ -108,7 +108,7 @@ key_key.smoothCamera:key.keyboard.unknown
 key_key.fullscreen:key.keyboard.f11
 key_key.spectatorOutlines:key.keyboard.unknown
 key_key.swapOffhand:key.keyboard.f
-key_key.saveToolbarActivator:key.keyboard.c
+key_key.saveToolbarActivator:key.keyboard.unknown
 key_key.loadToolbarActivator:key.keyboard.x
 key_key.advancements:key.keyboard.l
 key_key.hotbar.1:key.keyboard.1
@@ -127,6 +127,10 @@ key_Sprint:key.keyboard.m
 key_Fly:key.keyboard.r
 key_Sneak:key.keyboard.z
 key_Autotool:key.keyboard.unknown
+key_Dolphin:key.keyboard.j
+key_Killaura:key.keyboard.k
+key_Speedmine:key.keyboard.g
+key_Fullbright:key.keyboard.c
 soundCategory_master:1.0
 soundCategory_music:1.0
 soundCategory_record:1.0

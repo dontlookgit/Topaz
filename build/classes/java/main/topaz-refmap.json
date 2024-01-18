@@ -15,9 +15,15 @@
     "dev/daydreamers/topaz/client/mixins/InGameHudMixin": {
       "render(Lnet/minecraft/client/gui/DrawContext;F)V": "Lnet/minecraft/class_329;method_1753(Lnet/minecraft/class_332;F)V"
     },
+    "dev/daydreamers/topaz/client/mixins/LightmapTextureManagerMixin": {
+      "getBrightness": "Lnet/minecraft/class_765;method_23284(Lnet/minecraft/class_2874;I)F"
+    },
     "dev/daydreamers/topaz/client/mixins/LivingEntityRendererMixin": {
       "Lnet/minecraft/client/MinecraftClient;getInstance()Lnet/minecraft/client/MinecraftClient;": "Lnet/minecraft/class_310;method_1551()Lnet/minecraft/class_310;",
       "hasLabel(Lnet/minecraft/entity/LivingEntity;)Z": "Lnet/minecraft/class_922;method_4055(Lnet/minecraft/class_1309;)Z"
+    },
+    "dev/daydreamers/topaz/client/mixins/MinecraftClientMixin": {
+      "updateWindowTitle()V": "Lnet/minecraft/class_310;method_24288()V"
     },
     "dev/daydreamers/topaz/client/mixins/OptionsScreenMixin": {
       "init": "Lnet/minecraft/class_429;method_25426()V"
@@ -40,9 +46,15 @@
       "dev/daydreamers/topaz/client/mixins/InGameHudMixin": {
         "render(Lnet/minecraft/client/gui/DrawContext;F)V": "Lnet/minecraft/class_329;method_1753(Lnet/minecraft/class_332;F)V"
       },
+      "dev/daydreamers/topaz/client/mixins/LightmapTextureManagerMixin": {
+        "getBrightness": "Lnet/minecraft/class_765;method_23284(Lnet/minecraft/class_2874;I)F"
+      },
       "dev/daydreamers/topaz/client/mixins/LivingEntityRendererMixin": {
         "Lnet/minecraft/client/MinecraftClient;getInstance()Lnet/minecraft/client/MinecraftClient;": "Lnet/minecraft/class_310;method_1551()Lnet/minecraft/class_310;",
         "hasLabel(Lnet/minecraft/entity/LivingEntity;)Z": "Lnet/minecraft/class_922;method_4055(Lnet/minecraft/class_1309;)Z"
+      },
+      "dev/daydreamers/topaz/client/mixins/MinecraftClientMixin": {
+        "updateWindowTitle()V": "Lnet/minecraft/class_310;method_24288()V"
       },
       "dev/daydreamers/topaz/client/mixins/OptionsScreenMixin": {
         "init": "Lnet/minecraft/class_429;method_25426()V"

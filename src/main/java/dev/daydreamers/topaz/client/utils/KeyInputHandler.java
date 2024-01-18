@@ -8,6 +8,7 @@ import dev.daydreamers.topaz.client.features.movement.Step;
 import dev.daydreamers.topaz.client.features.player.Nofall;
 import dev.daydreamers.topaz.client.features.player.Retard;
 import dev.daydreamers.topaz.client.features.player.Sneak;
+import dev.daydreamers.topaz.client.features.render.Fullbright;
 import dev.daydreamers.topaz.client.features.world.Autotool;
 import dev.daydreamers.topaz.client.features.world.Speedmine;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
@@ -33,6 +34,7 @@ public class KeyInputHandler {
     public static KeyBinding dolphinKey;
     public static KeyBinding killauraKey;
     public static KeyBinding speedmineKey;
+    public static KeyBinding fullbrightKey;
 
     public static void registerKeyInput() {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
@@ -70,6 +72,9 @@ public class KeyInputHandler {
                 Speedmine.toggle = !Speedmine.toggle;
                 Autotool.toggle = !Autotool.toggle;
             }
+            if (fullbrightKey.wasPressed()) {
+                Fullbright.toggle = !Fullbright.toggle;
+            }
         });
     }
 
@@ -84,6 +89,7 @@ public class KeyInputHandler {
         dolphinKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(Dolphin.name, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_J, KEY_CATEGORY));
         killauraKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(Killaura.name, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_K, KEY_CATEGORY));
         speedmineKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(Speedmine.name, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_G, KEY_CATEGORY));
+        fullbrightKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(Fullbright.name, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_C, KEY_CATEGORY));
         registerKeyInput();
     }
 
