@@ -7,7 +7,7 @@ Description: Ticking entity
 java.lang.IllegalArgumentException: Attempted to register two key bindings with equal ID: Nofall!
 	at net.fabricmc.fabric.impl.client.keybinding.KeyBindingRegistryImpl.registerKeyBinding(KeyBindingRegistryImpl.java:58)
 	at net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper.registerKeyBinding(KeyBindingHelper.java:51)
-	at dev.daydreamers.topaz.client.events.KeyInputHandler.register(KeyInputHandler.java:44)
+	at dev.daydreamers.topaz.client.utils.KeyInputHandler.register(KeyInputHandler.java:44)
 	at net.minecraft.client.network.ClientPlayerEntity.handler$zjk000$topaz$onPostTick(ClientPlayerEntity.java:2399)
 	at net.minecraft.client.network.ClientPlayerEntity.tick(ClientPlayerEntity.java:245)
 	at net.minecraft.client.world.ClientWorld.tickEntity(ClientWorld.java:267)
@@ -34,7 +34,7 @@ Thread: Render thread
 Stacktrace:
 	at net.fabricmc.fabric.impl.client.keybinding.KeyBindingRegistryImpl.registerKeyBinding(KeyBindingRegistryImpl.java:58)
 	at net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper.registerKeyBinding(KeyBindingHelper.java:51)
-	at dev.daydreamers.topaz.client.events.KeyInputHandler.register(KeyInputHandler.java:44)
+	at dev.daydreamers.topaz.client.utils.KeyInputHandler.register(KeyInputHandler.java:44)
 	at net.minecraft.client.network.ClientPlayerEntity.handler$zjk000$topaz$onPostTick(ClientPlayerEntity.java:2399)
 	at net.minecraft.client.network.ClientPlayerEntity.tick(ClientPlayerEntity.java:245)
 	at net.minecraft.client.world.ClientWorld.tickEntity(ClientWorld.java:267)

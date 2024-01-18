@@ -4,6 +4,7 @@
   "package": "dev.daydreamers.topaz.client.mixins",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "AbstractBlockMixin"
   ],
   "client": [
     "ClientPlayerEntityMixin",

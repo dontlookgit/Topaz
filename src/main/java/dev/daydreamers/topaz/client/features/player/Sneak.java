@@ -1,7 +1,6 @@
 package dev.daydreamers.topaz.client.features.player;
 
-import dev.daydreamers.topaz.client.Wrapper;
-import net.minecraft.client.MinecraftClient;
+import dev.daydreamers.topaz.client.utils.Wrapper;
 import net.minecraft.network.packet.c2s.play.ClientCommandC2SPacket;
 
 public class Sneak {

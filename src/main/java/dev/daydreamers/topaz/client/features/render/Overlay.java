@@ -1,6 +1,6 @@
 package dev.daydreamers.topaz.client.features.render;
 
-import dev.daydreamers.topaz.client.Wrapper;
+import dev.daydreamers.topaz.client.utils.Wrapper;
 import dev.daydreamers.topaz.client.features.movement.Fly;
 import dev.daydreamers.topaz.client.features.movement.Sprint;
 import dev.daydreamers.topaz.client.features.movement.Step;

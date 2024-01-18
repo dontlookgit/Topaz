@@ -1,7 +1,8 @@
 package dev.daydreamers.topaz.client.mixins;
 
 import dev.daydreamers.topaz.client.TopazClient;
-import dev.daydreamers.topaz.client.Wrapper;
+import dev.daydreamers.topaz.client.features.world.Speedmine;
+import dev.daydreamers.topaz.client.utils.Wrapper;
 import dev.daydreamers.topaz.client.features.combat.Killaura;
 import dev.daydreamers.topaz.client.features.movement.Dolphin;
 import dev.daydreamers.topaz.client.features.movement.Fly;
@@ -55,9 +56,9 @@ public abstract class InGameHudMixin {
             featureNames.add(Nofall.name);
             featureStates.add(Nofall.toggle);
             featureColors.add(Nofall.color);
-            featureNames.add(Step.name);
-            featureStates.add(Step.toggle);
-            featureColors.add(Step.color);
+            //featureNames.add(Step.name);
+            //featureStates.add(Step.toggle);
+            //featureColors.add(Step.color);
             featureNames.add(Retard.name);
             featureStates.add(Retard.toggle);
             featureColors.add(Retard.color);
@@ -70,15 +71,18 @@ public abstract class InGameHudMixin {
             featureNames.add(Sneak.name);
             featureStates.add(Sneak.toggle);
             featureColors.add(Sneak.color);
-            featureNames.add(Autotool.name);
-            featureStates.add(Autotool.toggle);
-            featureColors.add(Autotool.color);
+            //featureNames.add(Autotool.name);
+            //featureStates.add(Autotool.toggle);
+            //featureColors.add(Autotool.color);
             featureNames.add(Dolphin.name);
             featureStates.add(Dolphin.toggle);
             featureColors.add(Dolphin.color);
             featureNames.add(Killaura.name);
             featureStates.add(Killaura.toggle);
             featureColors.add(Killaura.color);
+            featureNames.add(Speedmine.name);
+            featureStates.add(Speedmine.toggle);
+            featureColors.add(Speedmine.color);
 
             int y = 2;
             for (int i = 0; i < featureNames.size(); i++) {

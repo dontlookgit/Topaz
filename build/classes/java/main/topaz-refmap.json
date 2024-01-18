@@ -1,5 +1,8 @@
 {
   "mappings": {
+    "dev/daydreamers/topaz/client/mixins/AbstractBlockMixin": {
+      "calcBlockBreakingDelta": "Lnet/minecraft/class_4970;method_9594(Lnet/minecraft/class_2680;Lnet/minecraft/class_1657;Lnet/minecraft/class_1922;Lnet/minecraft/class_2338;)F"
+    },
     "dev/daydreamers/topaz/client/mixins/ClientPlayerEntityMixin": {
       "tick": "Lnet/minecraft/class_746;method_5773()V"
     },
@@ -22,6 +25,9 @@
   },
   "data": {
     "named:intermediary": {
+      "dev/daydreamers/topaz/client/mixins/AbstractBlockMixin": {
+        "calcBlockBreakingDelta": "Lnet/minecraft/class_4970;method_9594(Lnet/minecraft/class_2680;Lnet/minecraft/class_1657;Lnet/minecraft/class_1922;Lnet/minecraft/class_2338;)F"
+      },
       "dev/daydreamers/topaz/client/mixins/ClientPlayerEntityMixin": {
         "tick": "Lnet/minecraft/class_746;method_5773()V"
       },

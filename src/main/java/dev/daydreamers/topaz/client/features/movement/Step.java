@@ -1,13 +1,6 @@
 package dev.daydreamers.topaz.client.features.movement;
 
-import dev.daydreamers.topaz.client.Wrapper;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.text.OrderedText;
-import net.minecraft.text.Style;
-import net.minecraft.text.Text;
-import net.minecraft.text.TextContent;
-
-import java.util.List;
+import dev.daydreamers.topaz.client.utils.Wrapper;
 
 public class Step {
 

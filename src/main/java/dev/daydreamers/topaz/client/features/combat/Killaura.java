@@ -1,8 +1,5 @@
 package dev.daydreamers.topaz.client.features.combat;
 
-import dev.daydreamers.topaz.client.Wrapper;
-import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
-
 public class Killaura {
 
     public static final String name = "Killaura";

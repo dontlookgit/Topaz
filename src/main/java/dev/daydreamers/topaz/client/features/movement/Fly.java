@@ -1,6 +1,6 @@
 package dev.daydreamers.topaz.client.features.movement;
 
-import dev.daydreamers.topaz.client.Wrapper;
+import dev.daydreamers.topaz.client.utils.Wrapper;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 
 public class Fly {

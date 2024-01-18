@@ -1,6 +1,6 @@
 package dev.daydreamers.topaz.client.features.player;
 
-import dev.daydreamers.topaz.client.Wrapper;
+import dev.daydreamers.topaz.client.utils.Wrapper;
 import dev.daydreamers.topaz.client.features.movement.Fly;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

@@ -1,7 +1,6 @@
 package dev.daydreamers.topaz.client.features.movement;
 
-import dev.daydreamers.topaz.client.Wrapper;
-import net.minecraft.client.MinecraftClient;
+import dev.daydreamers.topaz.client.utils.Wrapper;
 
 public class Sprint {
 

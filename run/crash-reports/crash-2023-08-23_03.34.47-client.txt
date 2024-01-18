@@ -4,8 +4,8 @@
 Time: 2023-08-23 03:34:47
 Description: Ticking entity
 
-java.lang.NullPointerException: Cannot invoke "net.minecraft.client.option.KeyBinding.wasPressed()" because "dev.daydreamers.topaz.client.events.KeyInputHandler.stepKey" is null
-	at dev.daydreamers.topaz.client.events.KeyInputHandler.registerKeyInput(KeyInputHandler.java:35)
+java.lang.NullPointerException: Cannot invoke "net.minecraft.client.option.KeyBinding.wasPressed()" because "dev.daydreamers.topaz.client.utils.KeyInputHandler.stepKey" is null
+	at dev.daydreamers.topaz.client.utils.KeyInputHandler.registerKeyInput(KeyInputHandler.java:35)
 	at net.minecraft.client.network.ClientPlayerEntity.handler$zed000$topaz$onPreTick(ClientPlayerEntity.java:1893)
 	at net.minecraft.client.network.ClientPlayerEntity.tick(ClientPlayerEntity.java)
 	at net.minecraft.client.world.ClientWorld.tickEntity(ClientWorld.java:267)
@@ -30,7 +30,7 @@ A detailed walkthrough of the error, its code path and all known details is as f
 -- Head --
 Thread: Render thread
 Stacktrace:
-	at dev.daydreamers.topaz.client.events.KeyInputHandler.registerKeyInput(KeyInputHandler.java:35)
+	at dev.daydreamers.topaz.client.utils.KeyInputHandler.registerKeyInput(KeyInputHandler.java:35)
 	at net.minecraft.client.network.ClientPlayerEntity.handler$zed000$topaz$onPreTick(ClientPlayerEntity.java:1893)
 	at net.minecraft.client.network.ClientPlayerEntity.tick(ClientPlayerEntity.java)
 	at net.minecraft.client.world.ClientWorld.tickEntity(ClientWorld.java:267)

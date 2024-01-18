@@ -1,6 +1,6 @@
 package dev.daydreamers.topaz.client.features.movement;
 
-import dev.daydreamers.topaz.client.Wrapper;
+import dev.daydreamers.topaz.client.utils.Wrapper;
 import net.minecraft.util.math.Vec3d;
 
 public class Dolphin {

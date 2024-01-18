@@ -1,4 +1,4 @@
-package dev.daydreamers.topaz.client;
+package dev.daydreamers.topaz.client.utils;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.network.packet.Packet;

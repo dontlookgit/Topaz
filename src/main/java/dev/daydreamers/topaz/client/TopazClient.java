@@ -1,12 +1,11 @@
 package dev.daydreamers.topaz.client;
 
-import dev.daydreamers.topaz.client.events.KeyInputHandler;
+import com.mojang.brigadier.LiteralMessage;
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import dev.daydreamers.topaz.client.utils.KeyInputHandler;
+import dev.daydreamers.topaz.client.utils.Wrapper;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.util.Window;
-import net.minecraft.network.packet.Packet;
-import net.minecraft.util.profiling.jfr.sample.NetworkIoStatistics;
+import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 
 public class TopazClient implements ClientModInitializer {
 
@@ -19,5 +18,12 @@ public class TopazClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         KeyInputHandler.register();
+//        ClientCommandManager.getActiveDispatcher().register(LiteralArgumentBuilder.literal(".step").executes(context -> {
+//            assert Wrapper.getMC().player != null;
+//            Wrapper.getMC().player.sendMessage(new LiteralMessage("Executing .step command"), false);
+//
+//            return 1;
+//                })
+//        );
     }
 }

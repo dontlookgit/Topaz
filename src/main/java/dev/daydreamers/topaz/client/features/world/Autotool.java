@@ -1,9 +1,8 @@
 package dev.daydreamers.topaz.client.features.world;
 
-import dev.daydreamers.topaz.client.Wrapper;
+import dev.daydreamers.topaz.client.utils.Wrapper;
 import dev.daydreamers.topaz.client.mixins.ClientPlayerInteractionManagerAccessor;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerInteractionManager;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -18,32 +17,34 @@ Stolen from KiwiClient. Works perfectly.
 public class Autotool {
 
     public static final String name = "Autotool";
-    public static boolean toggle = true;
+    public static boolean toggle = false;
     public static final int color = 0xa1b3d1;
 
     static boolean prevState = true;
     static int slot = 0;
 
     public static void onAutotool() {
-        ClientPlayerInteractionManager interactionManager = Wrapper.getMC().interactionManager;
+        if (toggle) {
+            ClientPlayerInteractionManager interactionManager = Wrapper.getMC().interactionManager;
 
-        if (interactionManager == null) {
-            return;
+            if (interactionManager == null) {
+                return;
+            }
+            if (prevState && !interactionManager.isBreakingBlock()) {
+                assert Wrapper.getMC().player != null;
+                Wrapper.getMC().player.getInventory().selectedSlot = slot;
+            } else if (prevState != interactionManager.isBreakingBlock()) {
+                assert Wrapper.getMC().player != null;
+                slot = Wrapper.getMC().player.getInventory().selectedSlot;
+            }
+            if (interactionManager.isBreakingBlock()) {
+                BlockPos blockPos = ((ClientPlayerInteractionManagerAccessor) interactionManager).getCurrentBreakingPos();
+                assert Wrapper.getMC().world != null;
+                BlockState blockState = Wrapper.getMC().world.getBlockState(blockPos);
+                swap(blockState);
+            }
+            prevState = interactionManager.isBreakingBlock();
         }
-        if (prevState && !interactionManager.isBreakingBlock()) {
-            assert Wrapper.getMC().player != null;
-            Wrapper.getMC().player.getInventory().selectedSlot = slot;
-        } else if (prevState != interactionManager.isBreakingBlock()) {
-            assert Wrapper.getMC().player != null;
-            slot = Wrapper.getMC().player.getInventory().selectedSlot;
-        }
-        if (interactionManager.isBreakingBlock()) {
-            BlockPos blockPos = ((ClientPlayerInteractionManagerAccessor) interactionManager).getCurrentBreakingPos();
-            assert Wrapper.getMC().world != null;
-            BlockState blockState = Wrapper.getMC().world.getBlockState(blockPos);
-            swap(blockState);
-        }
-        prevState = interactionManager.isBreakingBlock();
     }
 
     public static void swap(BlockState state) {
