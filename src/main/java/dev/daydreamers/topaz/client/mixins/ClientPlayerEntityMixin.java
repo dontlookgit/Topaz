@@ -1,10 +1,7 @@
 package dev.daydreamers.topaz.client.mixins;
 
 import dev.daydreamers.topaz.client.features.combat.Killaura;
-import dev.daydreamers.topaz.client.features.movement.Dolphin;
-import dev.daydreamers.topaz.client.features.movement.Fly;
-import dev.daydreamers.topaz.client.features.movement.Sprint;
-import dev.daydreamers.topaz.client.features.movement.Step;
+import dev.daydreamers.topaz.client.features.movement.*;
 import dev.daydreamers.topaz.client.features.player.Nofall;
 import dev.daydreamers.topaz.client.features.player.Retard;
 import dev.daydreamers.topaz.client.features.player.Sneak;
@@ -30,6 +27,7 @@ public class ClientPlayerEntityMixin {
         Autotool.onAutotool();
         Dolphin.onDolphin();
         Killaura.onKillaura();
+        BoatFly.onBoatFly();
     }
 
     @Inject(method = "tick", at = @At("TAIL"))

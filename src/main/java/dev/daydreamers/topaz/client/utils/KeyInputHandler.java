@@ -1,10 +1,7 @@
 package dev.daydreamers.topaz.client.utils;
 
 import dev.daydreamers.topaz.client.features.combat.Killaura;
-import dev.daydreamers.topaz.client.features.movement.Dolphin;
-import dev.daydreamers.topaz.client.features.movement.Fly;
-import dev.daydreamers.topaz.client.features.movement.Sprint;
-import dev.daydreamers.topaz.client.features.movement.Step;
+import dev.daydreamers.topaz.client.features.movement.*;
 import dev.daydreamers.topaz.client.features.player.Nofall;
 import dev.daydreamers.topaz.client.features.player.Retard;
 import dev.daydreamers.topaz.client.features.player.Sneak;
@@ -35,6 +32,7 @@ public class KeyInputHandler {
     public static KeyBinding killauraKey;
     public static KeyBinding speedmineKey;
     public static KeyBinding fullbrightKey;
+    public static KeyBinding boatflyKey;
 
     public static void registerKeyInput() {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
@@ -75,6 +73,9 @@ public class KeyInputHandler {
             if (fullbrightKey.wasPressed()) {
                 Fullbright.toggle = !Fullbright.toggle;
             }
+            if (boatflyKey.wasPressed()) {
+                BoatFly.toggle = !BoatFly.toggle;
+            }
         });
     }
 
@@ -90,6 +91,7 @@ public class KeyInputHandler {
         killauraKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(Killaura.name, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_K, KEY_CATEGORY));
         speedmineKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(Speedmine.name, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_G, KEY_CATEGORY));
         fullbrightKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(Fullbright.name, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_C, KEY_CATEGORY));
+        boatflyKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(BoatFly.name, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, KEY_CATEGORY));
         registerKeyInput();
     }
 

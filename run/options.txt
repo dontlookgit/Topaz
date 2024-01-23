@@ -124,13 +124,14 @@ key_Nofall:key.keyboard.n
 key_Step:key.keyboard.b
 key_Retard:key.keyboard.o
 key_Sprint:key.keyboard.m
-key_Fly:key.keyboard.r
+key_Fly:key.keyboard.unknown
 key_Sneak:key.keyboard.z
 key_Autotool:key.keyboard.unknown
 key_Dolphin:key.keyboard.j
 key_Killaura:key.keyboard.k
 key_Speedmine:key.keyboard.g
 key_Fullbright:key.keyboard.c
+key_BoatFly:key.keyboard.r
 soundCategory_master:1.0
 soundCategory_music:1.0
 soundCategory_record:1.0

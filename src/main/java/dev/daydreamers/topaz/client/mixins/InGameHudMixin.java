@@ -1,14 +1,11 @@
 package dev.daydreamers.topaz.client.mixins;
 
 import dev.daydreamers.topaz.client.TopazClient;
+import dev.daydreamers.topaz.client.features.movement.*;
 import dev.daydreamers.topaz.client.features.render.Fullbright;
 import dev.daydreamers.topaz.client.features.world.Speedmine;
 import dev.daydreamers.topaz.client.utils.Wrapper;
 import dev.daydreamers.topaz.client.features.combat.Killaura;
-import dev.daydreamers.topaz.client.features.movement.Dolphin;
-import dev.daydreamers.topaz.client.features.movement.Fly;
-import dev.daydreamers.topaz.client.features.movement.Sprint;
-import dev.daydreamers.topaz.client.features.movement.Step;
 import dev.daydreamers.topaz.client.features.player.Nofall;
 import dev.daydreamers.topaz.client.features.player.Retard;
 import dev.daydreamers.topaz.client.features.player.Sneak;
@@ -85,6 +82,9 @@ public abstract class InGameHudMixin {
             featureNames.add(Fullbright.name);
             featureStates.add(Fullbright.toggle);
             featureColors.add(Fullbright.color);
+            featureNames.add(BoatFly.name);
+            featureStates.add(BoatFly.toggle);
+            featureColors.add(BoatFly.color);
 
             int y = 2;
             for (int i = 0; i < featureNames.size(); i++) {
