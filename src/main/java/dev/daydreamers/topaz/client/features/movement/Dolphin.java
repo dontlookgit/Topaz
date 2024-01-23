@@ -14,11 +14,11 @@ public class Dolphin {
             assert Wrapper.getMC().player != null;
             if (Wrapper.getMC().player.isTouchingWater() && !Wrapper.getMC().player.isSneaking() && !Wrapper.getMC().player.horizontalCollision) {
                 Vec3d velocity = Wrapper.getMC().player.getVelocity();
-                Wrapper.getMC().player.setVelocity(velocity.x * 1.15F, 0, velocity.z * 1.15F);
-            } else if (Wrapper.getMC().player.isSubmergedInWater() && !Wrapper.getMC().player.isSneaking()) {
+                Wrapper.getMC().player.setVelocity(velocity.x * 1.15F, 0.05, velocity.z * 1.15F);
+            } /* else if (Wrapper.getMC().player.isSubmergedInWater() && !Wrapper.getMC().player.isSneaking()) {
                 Vec3d velocity = Wrapper.getMC().player.getVelocity();
                 Wrapper.getMC().player.setVelocity(velocity.x, velocity.y + 0.05F, velocity.z);
-            }
+            } */
         }
     }
 

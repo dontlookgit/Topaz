@@ -7,7 +7,7 @@ public class Fly {
 
     public static final String name = "Fly";
     public static boolean toggle = false;
-    public static final int color = 0x5DD8E8;
+    public static final int color = 0x7098de;
 
     private static int bypassTimer = 0;
 

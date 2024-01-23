@@ -19,16 +19,21 @@ public class Nofall {
 
     public static final String name = "Nofall";
     public static boolean toggle = true;
-    public static final int color = 0xC90000;
+    public static int color = 0xC90000;
 
     public static void onNofall() {
         assert Wrapper.getMC().player != null;
-        if(Wrapper.getMC().player.fallDistance >= 2 && toggle && !Fly.toggle) {
+        if(toggle && Wrapper.getMC().player.isTouchingWater()) {
+            color = 0x118308;
+        } else {
+            color = 0xC90000;
+        }
+        if(toggle && Wrapper.getMC().player.fallDistance >= 2 && toggle && !Fly.toggle) {
             PlayerMoveC2SPacket packetLook = new PlayerMoveC2SPacket.LookAndOnGround(Wrapper.getMC().player.getYaw(), Wrapper.getMC().player.getPitch(), true);
             PlayerMoveC2SPacket packetPos = new PlayerMoveC2SPacket.PositionAndOnGround(Wrapper.getMC().player.getX(), Wrapper.getMC().player.getY(), Wrapper.getMC().player.getZ(), true);
             Wrapper.sendPacket(packetLook);
             Wrapper.sendPacket(packetPos);
-        } else if (Fly.toggle) {
+        } else if (toggle && Fly.toggle) {
             PlayerMoveC2SPacket packetLookFly = new PlayerMoveC2SPacket.LookAndOnGround(Wrapper.getMC().player.getYaw(), Wrapper.getMC().player.getPitch(), false);
             PlayerMoveC2SPacket packetPosFly = new PlayerMoveC2SPacket.PositionAndOnGround(Wrapper.getMC().player.getX(), Wrapper.getMC().player.getY(), Wrapper.getMC().player.getZ(), false);
             Wrapper.sendPacket(packetLookFly);

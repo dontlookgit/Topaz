@@ -101,7 +101,7 @@ key_key.chat:key.keyboard.t
 key_key.playerlist:key.keyboard.tab
 key_key.pickItem:key.mouse.middle
 key_key.command:key.keyboard.slash
-key_key.socialInteractions:key.keyboard.p
+key_key.socialInteractions:key.keyboard.unknown
 key_key.screenshot:key.keyboard.f2
 key_key.togglePerspective:key.keyboard.f5
 key_key.smoothCamera:key.keyboard.unknown
@@ -124,14 +124,14 @@ key_Nofall:key.keyboard.n
 key_Step:key.keyboard.b
 key_Retard:key.keyboard.o
 key_Sprint:key.keyboard.m
-key_Fly:key.keyboard.unknown
+key_Fly:key.keyboard.r
 key_Sneak:key.keyboard.z
 key_Autotool:key.keyboard.unknown
 key_Dolphin:key.keyboard.j
 key_Killaura:key.keyboard.k
 key_Speedmine:key.keyboard.g
 key_Fullbright:key.keyboard.c
-key_BoatFly:key.keyboard.r
+key_BoatFly:key.keyboard.p
 soundCategory_master:1.0
 soundCategory_music:1.0
 soundCategory_record:1.0
