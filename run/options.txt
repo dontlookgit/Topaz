@@ -133,7 +133,7 @@ key_Speedmine:key.keyboard.g
 key_Fullbright:key.keyboard.c
 key_BoatFly:key.keyboard.p
 soundCategory_master:1.0
-soundCategory_music:1.0
+soundCategory_music:0.0
 soundCategory_record:1.0
 soundCategory_weather:1.0
 soundCategory_block:1.0

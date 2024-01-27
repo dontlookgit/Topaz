@@ -6,6 +6,8 @@ import dev.daydreamers.topaz.client.features.player.Nofall;
 import dev.daydreamers.topaz.client.features.player.Retard;
 import dev.daydreamers.topaz.client.features.player.Sneak;
 import dev.daydreamers.topaz.client.features.world.Autotool;
+import dev.daydreamers.topaz.client.utils.Command;
+import dev.daydreamers.topaz.client.utils.Events;
 import net.minecraft.client.network.ClientPlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -17,21 +19,11 @@ public class ClientPlayerEntityMixin {
 
     @Inject(method = "tick", at = @At("HEAD"))
     public void onPreTick(CallbackInfo info) {
-        Step.onStep();
-        Nofall.onNofall();
-        //PlayerESP.nametag();
-        Retard.onRetard();
-        Sprint.onSprint();
-        Fly.onFly();
-        Sneak.onSneak();
-        Autotool.onAutotool();
-        Dolphin.onDolphin();
-        Killaura.onKillaura();
-        BoatFly.onBoatFly();
+        Events.onPreTick();
     }
 
     @Inject(method = "tick", at = @At("TAIL"))
     public void onPostTick(CallbackInfo info) {
-
+        Events.onPostTick();
     }
 }

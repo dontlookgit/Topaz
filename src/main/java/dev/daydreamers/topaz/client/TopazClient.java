@@ -2,6 +2,7 @@ package dev.daydreamers.topaz.client;
 
 import com.mojang.brigadier.LiteralMessage;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import dev.daydreamers.topaz.client.utils.Command;
 import dev.daydreamers.topaz.client.utils.KeyInputHandler;
 import dev.daydreamers.topaz.client.utils.Wrapper;
 import net.fabricmc.api.ClientModInitializer;
@@ -18,12 +19,6 @@ public class TopazClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         KeyInputHandler.register();
-//        ClientCommandManager.getActiveDispatcher().register(LiteralArgumentBuilder.literal(".step").executes(context -> {
-//            assert Wrapper.getMC().player != null;
-//            Wrapper.getMC().player.sendMessage(new LiteralMessage("Executing .step command"), false);
-//
-//            return 1;
-//                })
-//        );
+        Command.onCommand();
     }
 }

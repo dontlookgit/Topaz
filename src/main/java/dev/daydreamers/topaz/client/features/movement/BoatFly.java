@@ -10,7 +10,7 @@ public class BoatFly {
     public static final String name = "BoatFly";
     public static boolean toggle = false;
     public static final int color = 0x8ed94b;
-    public static float speed = 1F;
+    public static float speed = 1f;
 
     public static void onBoatFly() {
         assert Wrapper.getMC().player != null;

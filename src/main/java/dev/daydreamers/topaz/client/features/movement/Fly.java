@@ -11,7 +11,7 @@ public class Fly {
 
     private static int bypassTimer = 0;
 
-    private static float speed = 1F;
+    public static float speed = 1f;
 
     public static void onFly() {
         if (toggle) {
